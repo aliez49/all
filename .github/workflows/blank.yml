@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Gudang | User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://192.168.25.10//assets/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://192.168.25.10//assets/simple-sidebar/css/simple-sidebar.css">
+    <link rel="stylesheet" href="http://192.168.25.10/assets/web_admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="http://192.168.25.10//assets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://192.168.25.10//assets/simple-sidebar/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://192.168.25.10/assets/web_admin/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="http://192.168.25.10/assets/web_admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="http://192.168.25.10/assets/web_admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+    <style>
+      .bg-dark{
+        background-color: #343a40!important;
+      }
+      .nav-link{
+        color: rgba(255,255,255,.5);
+      }
+      .display-3 {
+        font-size: 4.5rem;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+      .lead {
+        font-size: 1.25rem;
+        font-weight: 300;
+      }
+      .text-center {
+        text-align: center!important;
+      }
+      .jumbotron{
+        margin-bottom: 2rem;
+        background-color: #e9ecef;
+        border-radius: .3rem;
+      }
+      .mr-auto{
+        margin-right: auto!important;
+      }
+      .navbar-brand{
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top bg-dark">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://192.168.25.10/user">Web Gudang</a>
+        </div>
+          <ul class="nav navbar-nav mr-auto">
+            <!-- <li><a class="nav-link" href="#">Home</a></li> -->
+            <li class="dropdown"><a class="bg-dark dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-database" aria-hidden="true"></i> Tabel <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://192.168.25.10/user/tabel_barangmasuk">Tabel Barang Masuk</a></li>
+                <li><a href="http://192.168.25.10/user/tabel_barangkeluar">Tabel Barang Keluar</a></li>
+                  <!-- <li><a href="#">Tabel Gudang 3</a></li> -->
+              </ul>
+            </li>
+            <!-- <li><a class="nav-link" href="#"><i class="fa fa-book" aria-hidden="true"></i> Page 2</a></li>
+            <li><a class="nav-link" href="#"><i class="fa fa-address-book" aria-hidden="true"></i> Page 3</a></li> -->
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-link">Last Login : </a></li>            
+            <li><a class="nav-link" href="http://192.168.25.10/user/setting"><i class="fa fa-user" aria-hidden="true"></i> Setting</a></li>
+            <li><a class="nav-link" href="http://192.168.25.10/user/signout"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out</a></li>
+          </ul>
+      </div>
+    </nav>
+<br><br><br>
+    <div class="container text-center" style="margin: 2em auto;">
+    <h2 class="tex-center">Tabel Barang Keluar</h2>
+    <a href="http://192.168.25.10/report/barangKeluarManual" style="margin-bottom:10px;float:left;" type="button" class="btn btn-danger" name="laporan_data"><i class="fa fa-file-text" aria-hidden="true"></i> Invoice Manual</a>
+    <div class="tabel" style="margin-top:80px">
+    <table class="table table-bordered table-striped" style="margin: 2em auto;" id="tabel_barangkeluar">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>ID_Transaksi</th>
+        <th>Tanggal Masuk</th>
+        <th>Tanggal Keluar</th>
+        <th>Lokasi</th>
+        <th>Kode Barang</th>
+        <th>Nama Barang</th>
+        <th>Satuan</th>
+        <th>Jumlah</th>
+        <th>Invoice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+                                  <td>1</td>
+          <td>WG-201713067948</td>
+          <td>8/11/2017</td>
+          <td>11/11/2017</td>
+          <td>NTB</td>
+          <td>8888166995215</td>
+          <td>Ciki Walens</td>
+          <td>Dus</td>
+          <td>50</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201713067948/11/11/2017" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>2</td>
+          <td>WG-201713067948</td>
+          <td>8/11/2017</td>
+          <td>11/12/2017</td>
+          <td>NTB</td>
+          <td>8888166995215</td>
+          <td>Ciki Walens</td>
+          <td>Dus</td>
+          <td>6</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201713067948/11/12/2017" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>3</td>
+          <td>WG-201713549728</td>
+          <td>4/11/2017</td>
+          <td>11/11/2017</td>
+          <td>Banten</td>
+          <td>1923081008002</td>
+          <td>Buku Hiragana</td>
+          <td>Pack</td>
+          <td>3</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201713549728/11/11/2017" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>4</td>
+          <td>WG-201774896520</td>
+          <td>9/11/2017</td>
+          <td>12/11/2017</td>
+          <td>Yogyakarta</td>
+          <td>60201311121008264</td>
+          <td>Battery ZTE</td>
+          <td>Dus</td>
+          <td>3</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201774896520/12/11/2017" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>5</td>
+          <td>WG-201727134650</td>
+          <td>05/12/2017</td>
+          <td>20/12/2017</td>
+          <td>Jakarta</td>
+          <td>29312390203</td>
+          <td>Susu</td>
+          <td>Dus</td>
+          <td>17</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201727134650/20/12/2017" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>6</td>
+          <td>WG-201810974628</td>
+          <td>15/01/2018</td>
+          <td>16/01/2018</td>
+          <td>Lampung</td>
+          <td>1923081008002</td>
+          <td>Buku Nihongo</td>
+          <td>Dus</td>
+          <td>50</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201810974628/16/01/2018" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>7</td>
+          <td>WG-201781267543</td>
+          <td>7/11/2017</td>
+          <td>17/01/2018</td>
+          <td>Yogyakarta</td>
+          <td>97897952889</td>
+          <td>Buku Framework Codeigniter</td>
+          <td>Dus</td>
+          <td>1</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201781267543/17/01/2018" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>8</td>
+          <td>WG-201832570869</td>
+          <td>15/01/2018</td>
+          <td>17/01/2018</td>
+          <td>Bali</td>
+          <td>1923081008002</td>
+          <td>test</td>
+          <td>Dus</td>
+          <td>10</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201832570869/17/01/2018" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>9</td>
+          <td>WG-201893850472</td>
+          <td>15/01/2018</td>
+          <td>18/01/2018</td>
+          <td>Bali</td>
+          <td>1923081008002</td>
+          <td>lumpur nartugo</td>
+          <td>Pcs</td>
+          <td>11</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201893850472/18/01/2018" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>10</td>
+          <td>WG-201781267543</td>
+          <td>7/11/2017</td>
+          <td>15/01/2018</td>
+          <td>Yogyakarta</td>
+          <td>97897952889</td>
+          <td>Buku Framework Codeigniter</td>
+          <td>Dus</td>
+          <td>1</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201781267543/15/01/2018" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>11</td>
+          <td>WG-201727134650</td>
+          <td>05/12/2017</td>
+          <td>15/01/2018</td>
+          <td>Jakarta</td>
+          <td>29312390203</td>
+          <td>Susu</td>
+          <td>Dus</td>
+          <td>3</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201727134650/15/01/2018" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>12</td>
+          <td>WG-201774896520</td>
+          <td>9/11/2017</td>
+          <td>15/01/2018</td>
+          <td>Yogyakarta</td>
+          <td>60201311121008264</td>
+          <td>Battery ZTE</td>
+          <td>Dus</td>
+          <td>3</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201774896520/15/01/2018" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>13</td>
+          <td>WG-201727134650</td>
+          <td>05/12/2017</td>
+          <td>16/01/2018</td>
+          <td>Jakarta</td>
+          <td>29312390203</td>
+          <td>Susu</td>
+          <td>Dus</td>
+          <td>1</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201727134650/16/01/2018" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>14</td>
+          <td>WG-201727134650</td>
+          <td>05/12/2017</td>
+          <td>17/01/2018</td>
+          <td>Jakarta</td>
+          <td>29312390203</td>
+          <td>Susu</td>
+          <td>Dus</td>
+          <td>1</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201727134650/17/01/2018" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>15</td>
+          <td>WG-201885472106</td>
+          <td>18/01/2018</td>
+          <td>19/01/2018</td>
+          <td>Riau</td>
+          <td>8996001600146</td>
+          <td>Teh Pucuk</td>
+          <td>Dus</td>
+          <td>50</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201885472106/19/01/2018" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                  <td>16</td>
+          <td>WG-201871602934</td>
+          <td>18/01/2018</td>
+          <td>16/03/2018</td>
+          <td>Papua</td>
+          <td>312212331222</td>
+          <td>Kopi Hitam</td>
+          <td>Dus</td>
+          <td>10</td>
+          <td><a type="button" class="btn btn-danger btn-report"  href="http://192.168.25.10/report/barangKeluar/WG-201871602934/16/03/2018" name="btn_report" style="margin:auto;"><i class="fa fa-file-text" aria-hidden="true"></i></a></td>
+      </tr>
+                </tbody>
+  </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#tabel_barangkeluar').DataTable();
+  });
+</script>
+  <footer class="cp-footer">
+    <div class="container">
+        <h3 class="title-footer">Copyright Web Gudang &copy; 2023</h3>
+    </div>
+  </footer>
+  </body>
+</html>
